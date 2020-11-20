@@ -1,26 +1,20 @@
 import styled from 'styled-components';
-import { Container, ContainerBackground } from '../../globalStyles';
+import { Container } from '../../globalStyles';
 
 export const AboutContainer = styled(Container)`
-    color: #fff;
-    padding: 10px;
+
+    
 ${Container}
 `;
 
-export const AboutContainerBackground = styled(ContainerBackground)`
-    height: 100%;
-    
-@media screen and (max-width: 1024px){
-            height: 100vh;
-    }
 
-`;
 
 export const DescriptionContainer = styled.div`
     margin: 0 auto;
     flex-direction: row;
     display: flex;
     align-items: center;
+    max-width: 1200px;
 
 
     @media screen and (max-width: 1024px){

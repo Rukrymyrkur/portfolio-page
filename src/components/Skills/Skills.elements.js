@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { Container, ContainerBackground } from '../../globalStyles';
+import { Container } from '../../globalStyles';
 
 export const SkillContainer = styled(Container)`
 
-    color: #fff;
     ul > li {
         height: 70px;
         width: 70px;
@@ -15,9 +14,6 @@ export const SkillContainer = styled(Container)`
 ${Container}
 `;
 
-export const SkillContainerBackground = styled(ContainerBackground)`
-
-`;
 
 export const DescriptionContainer = styled.div`
     flex-direction: column;

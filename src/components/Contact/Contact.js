@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 import { useIntersection } from 'react-use';
+import { useInView } from 'react-intersection-observer';
 import { ContactContainer, ContactModal } from './Contact.elements';
 import {useSpring, useTransition, a} from 'react-spring';
 
@@ -15,29 +16,18 @@ const Contact = () => {
     enter: { opacity: 1, transform: "translateY(0px)" },
     leave: { opacity: 0, transform: "translateY(-40px)" }
   });
-
-
-    //Listening for when the user scrolls to component
-    const intersectionRef = useRef(null);
-    const intersection = useIntersection(intersectionRef, {
-        root: null,
-        rootMargin: '300px',
-        threshold: 1
+//Listening for when the user scrolls to component - useInview
+    const [intersectionRef, inView] = useInView({
+        triggerOnce: false,
+        threshold: 1,
+        rootMargin: '500px 10px 100px 10px '
     });
-    //Changing background colors when scrolled to this component
-    useEffect(() => {
-        ((intersection && intersection.intersectionRatio) < 1) ?
-        (document.body.style.backgroundColor = '')
-        :
-        (document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.8)')
-    })
-    //Changing text colors when scrolled to this component
-    useEffect(() => {
-        ((intersection && intersection.intersectionRatio) < 1) ?
-        (document.body.style.color = 'black')
-        :
-        (document.body.style.color = 'white')
-    })
+    
+
+
+
+
+
     //Animated button
     const [props, set] = useSpring(() => ({
         xy: [0, 0],
@@ -53,13 +43,10 @@ const Contact = () => {
         });
       };
       //Overlay behind Modal 
-      ContactModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+      ContactModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.7)';
 
     return (
-        <ContactContainer id="contact" onMouseMove={handleMouseMove}
-        ref={intersectionRef}
-        style={{ color: (intersection && intersection.intersectionRatio) < 1 ? 'black' : 'white' }}
-            >
+        <ContactContainer id="contact" onMouseMove={handleMouseMove}>
             <a.button arial-label="write me" className="write-me" style={{transform: props.xy.interpolate(trans)}} onClick={() => setModalIsOpen(true)}>Say Hello</a.button>   
             <ContactModal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} 
             onAfterOpen={() => { document.body.style.overflow = 'hidden'; }}

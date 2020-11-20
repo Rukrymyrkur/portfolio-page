@@ -1,6 +1,6 @@
 import React from "react";
 import { a, useTrail, useSpring } from "react-spring";
-import { SkillContainer, DescriptionContainer, SkillContainerBackground } from "../Skills/Skills.elements";
+import { SkillContainer, DescriptionContainer } from "../Skills/Skills.elements";
 import { useInView } from 'react-intersection-observer';
 
 // const currentStack = [``];

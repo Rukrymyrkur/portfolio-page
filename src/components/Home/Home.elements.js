@@ -8,7 +8,7 @@ const anotherColor = "#d72323";
 const justAnotherColor = "#f5eded";
 
 export const HomeContainer = styled(Container)`
-    min-height: 70vh;
+    min-height: 100vh;
     color: #000;
     ${Container}
 `;
@@ -73,6 +73,7 @@ export const Directions = styled.span`
     position: absolute;
     
     color: #dedede;
+    color: #000;
     text-transform: uppercase;
 
     @media only screen and (max-width: 600px){

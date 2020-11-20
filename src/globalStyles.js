@@ -15,20 +15,6 @@ const GlobalStyle = createGlobalStyle`
 
 html{
     scroll-behavior: smooth;
-    /* &:before,:after{
-        font-size: 1rem;
-        font-family: 'Courier New', Courier, monospace;
-        display: inline-block;
-        color: ${beforeAfterColor};
-
-    }
-    &:before{
-        content: '<html>';
-    }
-    &:after{
-        content: '</html>'
-    }
-} */
 }
 
 body{
@@ -36,43 +22,13 @@ body{
         padding: 0;
         transition-property: color;
         transition: 0.7s ease;
-        background-color: #e8e8e8;
-        
-    /* &:before,:after{
-        font-size: 1rem;
-        font-family: 'Courier New', Courier, monospace;
-        /* display: inline-block; */
-        /* color: ${beforeAfterColor};
-    }
-    &:before{
-        content: '<body>'
-    }
-    &:after{
-        content: '</body>'
-    } */
+        /* background-color: #e8e8e8; */
 }
 `
-export const ContainerBackground = styled.div`
-        background-color: #171717;
-        content: '';
-        display: block;
-        height: 100%;
-        left: 5rem;
-        position: absolute;
-        right: 5rem;
-        transform: skewY(-5deg);
-        transform-origin: 100%;
-        z-index: -1;
-
-        @media screen and (max-width: 1024px){
-            left:0;
-            right:0;
-    }
-
-`;
 
 export const Container = styled.div`
     margin: 0 auto;
+    padding: 10px 50px;
     font-family: ${secondaryFont};
     align-items: center;
     justify-content: center;
@@ -84,6 +40,7 @@ export const Container = styled.div`
     font-family: ${tertiaryFont};
     text-align: center;
     width: 100%;
+    
     &:before,:after{
         font-size: 1rem;
         font-family: 'Courier New', Courier, monospace;
@@ -103,6 +60,7 @@ export const Container = styled.div`
     text-align: center;
     width: 100%;
     font-size: 2rem;
+
     &:before,:after{
         margin: 0 10px;
         font-size: 1rem;
@@ -121,6 +79,7 @@ export const Container = styled.div`
     font-family: ${tertiaryFont};
     width: 100%;
     font-size: 1.5rem;
+
     &:before,:after{
         font-size: 1rem;
         font-family: 'Courier New', Courier, monospace;
@@ -137,8 +96,8 @@ export const Container = styled.div`
 
    p{
     font-family: ${secondaryFont};
-    
     width: 100%;
+
     &:before,:after{
         font-size: 1rem;
         font-family: 'Courier New', Courier, monospace;
@@ -151,31 +110,13 @@ export const Container = styled.div`
         content: '</p>'
     }
 }
-
    a{
     font-family: ${secondaryFont};
     width: 100%;
-
 }
-
    ul{
     font-family: ${primaryFont};
-    
     width: 100%;
-    &:before,:after{
-        font-size: 1rem;
-        font-family: 'Courier New', Courier, monospace;
-        display: inline-block;
-        color: ${beforeAfterColor};
-    }
-    &:before{
-        content: '<ul>'
-    }
-    &:after{
-        content: '</ul>'
-    }
-}
-   }
 `
 
 
