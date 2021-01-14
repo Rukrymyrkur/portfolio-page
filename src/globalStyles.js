@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 const primaryFont = "'Playfair Display', serif";
 const secondaryFont = "'Raleway', sans-serif";
 const tertiaryFont = "'Inter', sans-serif";
-const anotherFont = "";
+const anotherFont = "'Roboto Mono', monospace";
 const beforeAfterColor = "#a8a8a8";
 
 export const GlobalStyle = createGlobalStyle`
@@ -26,22 +26,78 @@ export const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+    ::selection {
+      background: #ffb7b7; /* WebKit/Blink Browsers */
+    }
+    ::-moz-selection {
+      background: #ffb7b7; /* Gecko Browsers */
+    }
 }
 
 html{
     scroll-behavior: smooth;
+
 }
 
 body{
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
     transition-property: color;
     transition: 0.7s ease;
     /* background-color: #e8e8e8; */
+
 }
+
+`;
+
+export const SectionTitleContainer = styled.div``;
+
+//Background element with outline
+export const BackgroundText = styled.div`
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 40rem;
+
+  float: left;
+  position: absolute;
+  /* margin-left: 200px;
+  margin-top: -10rem; */
+
+  z-index: -5;
+  opacity: 0.2;
+  /* writing-mode: vertical-rl;
+  text-orientation: mixed; */
+
+  color: ${({ theme }) => theme.text};
+  -webkit-text-fill-color: ${({ theme }) => theme.body};
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: ${({ theme }) => theme.text};
+  /* filter: blur(2px); */
+
+  display: none;
+  @media screen and (max-width: 1024px) {
+    font-size: 10rem;
+
+    float: left;
+    position: absolute;
+    margin-left: 200px;
+    margin-top: -5rem;
+    overflow-x: hidden;
+  }
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 `;
 
 export const Container = styled.div`
@@ -53,13 +109,19 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
 
-    
+    @media screen and (max-width: 600px) {
+    padding: 5px;
+  }
+
 
     
    h1{
     font-family: ${tertiaryFont};
     text-align: center;
     width: 100%;
+
+
+
     
     /* &:before,:after{
         font-size: 1rem;
@@ -77,17 +139,23 @@ export const Container = styled.div`
 
    h2{
     font-family: ${primaryFont};
-    text-align: center;
-    width: 100%;
-    font-size: 2rem;
-    padding-bottom: 50px;
+    text-align: left;
 
+    width: 100%;
+    font-size: 4rem;
+    padding-bottom: 50px;
 
     text-decoration: underline;
     text-decoration-thickness: 1rem;
     text-decoration-color: #0c3c78;
     text-underline-offset: -1.5rem;
     text-decoration-skip-ink: none;
+
+    span{
+        font-family: ${anotherFont};
+        font-weight: 400;
+        font-size: 2.5rem;
+    }
 /* 
     &:before,:after{
         margin: 0 10px;
@@ -103,6 +171,12 @@ export const Container = styled.div`
         content: '</h2>'
     } */
 }
+
+span{
+        font-family: ${anotherFont};
+    }
+
+
    h3{
     font-family: ${tertiaryFont};
     width: 100%;
@@ -112,7 +186,7 @@ export const Container = styled.div`
     text-decoration: underline;
     text-decoration-thickness: 9px;
     text-decoration-color: #f30a49;
-    text-underline-offset: -6px;
+    text-underline-offset: -10px;
     text-decoration-skip-ink: none;
     /* background-color: ${({ theme }) => theme.body}; */
 
@@ -131,7 +205,8 @@ export const Container = styled.div`
 }
 
    p{
-    font-family: ${secondaryFont};
+    font-family: ${anotherFont};
+    font-weight: 100;
     width: 100%;
 
     /* &:before,:after{
@@ -147,17 +222,23 @@ export const Container = styled.div`
     } */
 }
    a{
-    font-family: ${secondaryFont};
+    font-family: ${anotherFont};
 
 }
    ul{
     font-family: ${primaryFont};
 
-
+}
+button{
+  :focus{
+    border: 5px solid ${({ theme }) => theme.text};
+    color: 5px solid ${({ theme }) => theme.body};
+  }
 `;
 
 export const lightTheme = {
   body: "#eee",
+  transparentBody: "rgba(238,238,238, 0.7)",
   text: "#111",
   textShadow: "#111",
   navcolor: "#eee",
@@ -165,6 +246,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   body: "#111",
+  transparentBody: "rgba(17, 17, 17, 0.7)",
   text: "#eee",
   textShadow: "#eee",
   navcolor: "#111",

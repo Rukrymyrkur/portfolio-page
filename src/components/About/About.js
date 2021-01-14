@@ -1,58 +1,115 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useLayoutEffect } from "react";
 import {
   AboutContainer,
   Description,
   DescriptionContainer,
   TitleContainer,
+  Background,
+  FullPageContainer,
+  TrailsMain,
+  Circles,
 } from "./About.elements";
 import { useInView } from "react-intersection-observer";
-import { a, useSpring } from "react-spring";
+import { a, useSpring, useChain, useTrail } from "react-spring";
 import pic3 from "../../images/pic3.JPG";
-import { Parallax } from "react-scroll-parallax";
+import { Parallax, useController } from "react-scroll-parallax";
+import TrailsAnimation from "../TrailsAnimation/TrailsAnimation";
 
 const About = () => {
-  //animation of TitleContainer - inView
   const [ref, inView] = useInView({
     triggerOnce: false,
-    threshold: 1,
-    rootMargin: "500px 10px 100px 10px ",
+    threshold: 0.3,
+    // rootMargin: "0px 0px 0px 50px",
   });
 
-  //animation of TitleContainer - Spring
-  const props = useSpring({
+  //fade in container
+  const opacityRef = useRef();
+  const { opacity, transform } = useSpring({
+    ref: opacityRef,
+    config: { mass: 5, tension: 500, friction: 200 },
     opacity: inView ? 1 : 0,
-    transform: inView ? "scale(1)" : "scale(0.95)",
+    transform: inView
+      ? "scale(1) translate(0px, 0px)"
+      : "scale(0.97) translate(20px, 20px)",
   });
+
+  //slide in title
+  const transformRef = useRef();
+  const { slideIn, slideInOpacity } = useSpring({
+    ref: transformRef,
+    slideIn: inView ? `translate(0px, 0px)` : `translate(-10px, -10px)`,
+    slideInOpacity: inView ? 1 : 0,
+  });
+
+  //delay animation
+  useChain([opacityRef, transformRef], [0, 100]);
+
+  //parallax cache taken from 'react-intersection-observer' documentation
+  const ParallaxCache = () => {
+    const { parallaxController } = useController();
+
+    useLayoutEffect(() => {
+      const handler = () => parallaxController.update();
+      window.addEventListener("load", handler);
+      return () => window.removeEventListener("load", handler);
+    }, [parallaxController]);
+
+    return null;
+  };
 
   return (
     <>
-      <AboutContainer id="about">
-        <a.div ref={ref} style={props}>
-          <TitleContainer>
-            <h2>1. About</h2>
-          </TitleContainer>
-          <DescriptionContainer>
-            <img src={pic3} alt="" />
-            <Description>
-              <span>
-                Getting really good at what I do is my goal. I want to become a
-                professional developer
-              </span>
-              <span>
-                Coding is just what I love and it gives me feelings of happiness
-                and fullfillment
-              </span>
-              <span>
-                I am searching for a place where I can become a more important
-                part of a dev team!
-              </span>
-              <span>
-                I have a BA degree in <strong>Architecture</strong>
-              </span>
-            </Description>
-          </DescriptionContainer>
-        </a.div>
-      </AboutContainer>
+      <ParallaxCache />
+      <FullPageContainer>
+        <Parallax x={[-50, -20]}>
+          <Background>01.About</Background>
+        </Parallax>
+        <AboutContainer id="about" ref={ref}>
+          <a.div
+            style={{
+              transform: slideIn,
+              opacity: slideInOpacity,
+            }}
+          >
+            <TitleContainer>
+              <h2>
+                <span>01.</span> About
+              </h2>
+            </TitleContainer>
+          </a.div>
+          <a.div style={{ opacity, transform }}>
+            <DescriptionContainer>
+              <Circles />
+              <Parallax y={[20, -20]}>
+                <img src={pic3} alt="" />
+              </Parallax>
+              <Description>
+                <TrailsAnimation>
+                  <span>
+                    My aim is to design and code easy to use websites with a
+                    creative flair.
+                  </span>
+                  <span>
+                    I have a BA degree in <strong>architecture</strong>, but
+                    gradually fell into the world of web development, finished a
+                    few courses on <strong>FreeCodeCamp</strong>,{" "}
+                    <strong>Coursera</strong>, currently working on{" "}
+                    <strong>CS50</strong> based course in{" "}
+                    <strong>Turing School</strong>.
+                  </span>
+                  <span>
+                    I am searching for a place where I can become a more
+                    important part of a dev team!
+                  </span>
+                </TrailsAnimation>
+                <a href="#work" className="link">
+                  Go straight to my projects!
+                </a>
+              </Description>
+            </DescriptionContainer>
+          </a.div>
+        </AboutContainer>
+      </FullPageContainer>
     </>
   );
 };

@@ -1,54 +1,179 @@
-import React from 'react'
-import AltAccordion from './AltAccordion/AltAccordion';
-import { Wrapper, ProjectWrapper, ProjectDescription } from './Work.elements';
+import React, { useLayoutEffect } from "react";
+import {
+  WorkContainer,
+  Description,
+  DescriptionContainer,
+  TitleContainer,
+  Background,
+  FullPageContainer,
+  DescriptionImages,
+  Button,
+} from "./Work.elements";
+import { useInView, InView } from "react-intersection-observer";
+import { a, useSpring, useChain } from "react-spring";
+import laptop1 from "../../images/laptop1.png";
+import mobile1 from "../../images/mobile1.png";
+import { Parallax, useController } from "react-scroll-parallax";
+import TrailsAnimation from "../TrailsAnimation/TrailsAnimation";
+import WorkTrailAnimation from "./WorkTrailAnimation/WorkTrailAnimation";
 
 const Work = () => {
-    return (
-        <>
-        <Wrapper id="work"><h2>3. Work</h2>
-        <p>I would call myself a curious person. All that curiosity often drives me to do something that makes me smile and feel accomplished, but more often, it actually leads to a lot of unfinished projects.
-                        I find myself thinking of a brilliant idea that I want to build, but have no knowledge how to make it, and then I feel sad. And watch more tutorials. And never get back to my brilliant idea.
-                        Will this be the end of my motivation to become a web developer?</p>
-            <AltAccordion title="1. Portfolio page">
-                            <div className="strong">What's the point of this webpage?</div><div>
-                        And then it hit me - what if I would <a className="externalLink" href="https://www.amazon.com/Show-Your-Work-Austin-Kleon/dp/076117897X" target="_blank">show my work</a>?
-                        I enjoy designing and sewing myself, but I am so inactive in social media, only my closest friends know about it.
-                        </div>
-                        <div>
-                            <div className="strong">How did you make it?</div>
-                            I'm not going to say this is groundbreaking and never seen before, but I will still talk how I've made it!
-                            I've decided to build it with React. I've made some small projects with it before, but never learnt how components work together when there are lots of them.
-                            You could <a className="externalLink" href="/" target="_blank">check the source code</a> if you're interested!
-                            I've also tried using styled-components. Have mixed feelings about them, but still kind of like it.</div>
-                        <div>
-                            I'll admit, sometimes I get into details too much, and not enough into overall project,
-                            that's why I've changed the background 3 times and took too much time photoshopping images so they would 'blend well'.
-                        </div>
-            </AltAccordion>
-            <AltAccordion title="2. Fashion design porfolio page">
+  //listen when component is in view
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+    // rootMargin: "0px 0px 0px 50px",
+  });
+
+  // //fade in container
+  // const { opacity, transform } = useSpring({
+  //   opacity: inView ? 1 : 0,
+  //   transform: inView
+  //     ? "scale(1) translate(0px, 0px)"
+  //     : "scale(0.97) translate(20px, 20px)",
+  // });
+
+  //slide in title
+  const { slideIn, slideInOpacity } = useSpring({
+    slideIn: inView ? `translate(0px, 0px)` : `translate(-10px, -10px)`,
+    slideInOpacity: inView ? 1 : 0,
+  });
+
+  //parallax cache taken from 'react-scroll-parallax' documentation
+  const ParallaxCache = () => {
+    const { parallaxController } = useController();
+
+    useLayoutEffect(() => {
+      const handler = () => parallaxController.update();
+      window.addEventListener("load", handler);
+      return () => window.removeEventListener("load", handler);
+    }, [parallaxController]);
+
+    return null;
+  };
+  return (
+    <>
+      <ParallaxCache />
+      <FullPageContainer>
+        <Parallax x={[-50, -20]}>
+          <Background>03.Work</Background>
+        </Parallax>
+        <WorkContainer id="work" ref={ref}>
+          <a.div
+            style={{
+              transform: slideIn,
+              opacity: slideInOpacity,
+            }}
+          >
+            <TitleContainer>
+              <h2>
+                <span>03.</span> Work
+              </h2>
+            </TitleContainer>
+          </a.div>
+
+          <DescriptionContainer>
+            <Description>
+              <WorkTrailAnimation>
+                <h3>03.01 Personal portfolio page</h3>
+                <span>
+                  My goal when creating this page, was to show my progress from
+                  the last one, notable features are: a global{" "}
+                  <strong>theme selector</strong>, <strong>animations</strong>{" "}
+                  that appear on scroll, a working <strong>contact form</strong>
+                  . This site is also <strong>mobile friendly</strong>!
+                </span>
+                <br />
+                <br />
+                <span>
+                  Stack:{" "}
+                  <strong>
+                    Javascript, CSS, HTML, React, styled-components,
+                    react-spring, Node.js
+                  </strong>
+                </span>
                 <div>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-            </div>
-            </AltAccordion>
-            <AltAccordion title="3. Quotes with API">
-            Sed ut perspiciatis unde omnis iste natus error sit Sed ut perspiciatis unde omnis iste
-            <br/>
-            
-            natus error sit Sed ut perspiciatis unde omnis iste natus error sit Sed ut perspiciatis unde omnis iste natus error sit Sed ut perspiciatis unde omnis iste natus error sit Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-            </AltAccordion>
+                  <button>Live</button>
+                  <button>Code</button>
+                </div>
+              </WorkTrailAnimation>
+            </Description>
+            <DescriptionImages>
+              <WorkTrailAnimation>
+                <img className="laptop" src={laptop1} alt="" />
+                <Parallax y={[-20, 0]}>
+                  <img className="mobile" src={mobile1} alt="" />
+                </Parallax>
+              </WorkTrailAnimation>
+            </DescriptionImages>
+          </DescriptionContainer>
 
-        {/* <ProjectWrapper>
-                <ProjectDescription>
-                    <h3>Project title</h3>
-                    <p>Project description more in depth</p>
-                </ProjectDescription>
-                <button className="source-button">Source Code</button>
-                <button className="live-button">Live</button>
-        </ProjectWrapper> */}
+          <DescriptionContainer>
+            <Description>
+              <WorkTrailAnimation>
+                <h3>03.02 Sewing portfolo page</h3>
+                <span>
+                  Getting really good Getting really good Getting really good
+                  Getting really good Getting really good Getting really good at
+                  what I do is my goal. I want to become a professional
+                  developer I have a BA degree in <strong>Architecture</strong>
+                </span>
+                <br />
+                <br />
+                <span>
+                  Stack: <strong>Javascript, CSS, HTML, React</strong>
+                </span>
+                <div>
+                  <button>Live</button>
+                  <button>Code</button>
+                </div>
+              </WorkTrailAnimation>
+            </Description>
+            <DescriptionImages>
+              <WorkTrailAnimation>
+                <img className="laptop" src={laptop1} alt="" />
+                <Parallax y={[-20, 0]}>
+                  <img className="mobile" src={mobile1} alt="" />
+                </Parallax>
+              </WorkTrailAnimation>
+            </DescriptionImages>
+          </DescriptionContainer>
 
-        </Wrapper>
-        </>
-    )
-}
+          <DescriptionContainer>
+            <Description>
+              <WorkTrailAnimation>
+                <h3>03.03 Quote generator</h3>
+                <span>
+                  First I've created an API, then applied it to a page that
+                  generates a random quote <strong>Architecture</strong>
+                </span>
+                <br />
+                <br />
+                <span>
+                  Stack:{" "}
+                  <strong>
+                    Javascript, CSS, HTML, React, Bootstrap, express.js
+                  </strong>
+                </span>
+                <div>
+                  <button>Live</button>
+                  <button>Code</button>
+                </div>
+              </WorkTrailAnimation>
+            </Description>
+            <DescriptionImages>
+              <WorkTrailAnimation>
+                <img className="laptop" src={laptop1} alt="" />
+                <Parallax y={[-20, 0]}>
+                  <img className="mobile" src={mobile1} alt="" />
+                </Parallax>
+              </WorkTrailAnimation>
+            </DescriptionImages>
+          </DescriptionContainer>
+        </WorkContainer>
+      </FullPageContainer>
+    </>
+  );
+};
 
-export default Work
+export default Work;
