@@ -25,7 +25,7 @@ function App() {
         <ThemeProvider theme={themeMode}>
           <>
             <GlobalStyle />
-            <Suspense fallback={<Loading />} maxDuration={5000}>
+            <Suspense fallback={<Loading />}>
               <Navbar />
               <ModeButton theme={theme} setTheme={setTheme} />
               <Home />

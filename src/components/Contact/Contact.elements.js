@@ -131,6 +131,7 @@ export const ContactModal = styled(Modal)`
   @media screen and (max-width: 425px) {
     margin: 0;
     height: calc(100% - 50px);
+    padding: 10px;
   }
 `;
 
@@ -193,6 +194,10 @@ export const Input = styled.input`
   &:focus {
     border: 2px solid #a1083b;
     outline: none;
+  }
+  @media screen and (max-width: 725px) {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
   }
 `;
 

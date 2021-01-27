@@ -179,7 +179,7 @@ const Work = () => {
                 <h3>03.03 Quote generator</h3>
                 <span>
                   First I've created an API, then applied it to a page that
-                  generates a random quote <strong>Architecture</strong>
+                  generates a random quote.
                 </span>
                 <br />
                 <br />
