@@ -38,7 +38,7 @@ export const Hint = styled.span`
 export const SkillItem = styled.div`
   text-align: center;
   margin: 10px;
-  display: inline-block;
+  display: flex;
   width: 6rem;
 
   animation: ${breath} 2s linear infinite alternate;
@@ -47,6 +47,7 @@ export const SkillItem = styled.div`
     width: 5rem;
     justify-items: space-between;
   }
+
   :hover {
     cursor: pointer;
     animation-play-state: paused;
@@ -82,7 +83,7 @@ export const SkillItem = styled.div`
 `;
 
 export const DescriptionContainer = styled.div`
-/* border-top: 3px dashed ${({ theme }) => theme.text}; */
+  /* border-top: 3px dashed ${({ theme }) => theme.text}; */
   /* box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.05), -8px -8px 12px 0 rgba(255, 255, 255, 0.3); */
   width: 1000px;
@@ -91,6 +92,7 @@ export const DescriptionContainer = styled.div`
   flex-direction: column;
   height: 100%;
   z-index: 100;
+  text-align: center;
 
   div {
     display: inline-block;
@@ -101,6 +103,8 @@ export const DescriptionContainer = styled.div`
     display: flex;
     /* margin-left: 1rem; */
   }
+  @media screen and (max-width: 375px) {
+    padding: 25px;
   }
 `;
 

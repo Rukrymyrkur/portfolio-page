@@ -174,7 +174,7 @@ export const Input = styled.input`
   background-color: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
   padding: 0.5em;
-  margin: 1rem;
+  margin: 1rem 0;
   width: 100%;
   font-size: 1rem;
   border: 2px solid #ccc;
@@ -191,7 +191,7 @@ export const MessageArea = styled.textarea`
   background-color: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
   padding: 12px;
-  margin: 1rem;
+  margin: 1rem 0;
   border: 2px solid #ccc;
   /* border-radius: 4px; */
   box-sizing: border-box;

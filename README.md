@@ -1,40 +1,66 @@
 # Personal Portfolio Page
 
-A one-page website created with React.
+A one-page website created with React, experimenting with react-spring library and using styled-components for style.
 
 ## Table of contents
 
-[Info](#info)
-[Technologies](#technologies)
+[Notable Features](#notable-features)
+[Main stack](#main-stack)
+[Structure](#structure)
 [Setup](#setup)
 [Link example](#link-example)
 
-## Info
-
-2-3 sentences about the project aim, what problems it solves
-If it's a training project, mention your incentive. Why did you want to create it?
-To learn a particular technology?
-
-### Notable features:
+## Notable features:
 
 - react-spring animations
 - Parallax animations
-- Swith between light and dark mode
+- Switch between light and dark mode
 - react-router
 
-## Technologies
+## Main stack
 
-with versions 4.0 or something
+- react-router-dom 5.2.0
+- react 17.0.1
+- styled-components 5.2.1
 
-- React
-- styled-components
+## Structure
+
+```
+├───public/
+├───src/
+│   ├───components/
+│   │   ├───About/
+│   │   ├───AltNavbar/
+│   │   ├───Contact/
+│   │   ├───Footer/
+│   │   ├───Home/
+│   │   ├───Loading/
+│   │   ├───ModeButton/
+│   │   ├───Navbar/
+│   │   ├───Skills/
+│   │   ├───Skills2/
+│   │   ├───TrailsAnimation/
+│   │   └───Work/
+│   │       ├───WorkTrailAnimation/
+│   │       ├───Work.elements.js
+│   │       └───Work.js
+│   ├───images/
+│   ├───App.js
+│   ├───globalStyles.js
+│   ├───index.js
+│   └───useDarkMode.js
+├───package.json
+└───README.md
+```
 
 ## Setup
 
-- This is meant to be an example of a bullet list
-- This is meant to be an example of a bullet list
-- This is meant to be an example of a bullet list
+to run,
+
+```
+npm start
+```
 
 ## Link example
 
-[Live version](www.willbeupdated.com)
+[Live](www.willbeupdated.com)
