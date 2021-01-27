@@ -126,6 +126,7 @@ export const ContactModal = styled(Modal)`
   padding: 50px;
 
   @media screen and (max-width: 425px) {
+    max-height: 70vh;
   }
 `;
 
@@ -141,6 +142,9 @@ export const StyledForm = styled.form`
   p {
     font-family: "La Belle Aurore", cursive !important;
     font-size: 1.5rem;
+    @media screen and (max-width: 725px) {
+      line-height: 1.5rem;
+    }
   }
   label {
     margin-left: 2rem;
