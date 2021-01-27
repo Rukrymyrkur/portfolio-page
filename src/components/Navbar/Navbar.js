@@ -21,6 +21,11 @@ import TrailsAnimation from "../TrailsAnimation/TrailsAnimation";
 
 import styled from "styled-components";
 
+function onLinkClick(e) {
+  e.preventDefault();
+  // further processing happens here
+}
+
 // Main Component
 const Navbar = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -32,7 +37,7 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResizeWindow);
     };
   }, []);
-  console.log(width);
+
   // if (width > breakpoint) {
   //   return (
   //     <div>
@@ -54,6 +59,7 @@ const Navbar = () => {
                 smooth={true}
                 arial-label="home"
                 data-tooltip="Home"
+                onClick={onLinkClick}
               >
                 <FaCampground className="react-icons" />
               </NavLink>
@@ -65,6 +71,7 @@ const Navbar = () => {
                 smooth={true}
                 aria-label="about"
                 data-tooltip="01.About"
+                onClick={onLinkClick}
               >
                 <FaFemale className="react-icons" />
               </NavLink>
@@ -76,6 +83,7 @@ const Navbar = () => {
                 smooth={true}
                 aria-label="skills"
                 data-tooltip="02.Skills"
+                onClick={onLinkClick}
               >
                 <FaLaptopCode className="react-icons" />
               </NavLink>
@@ -87,6 +95,7 @@ const Navbar = () => {
                 smooth={true}
                 aria-label="work"
                 data-tooltip="03.Work"
+                onClick={onLinkClick}
               >
                 <FaFolderOpen className="react-icons" />
               </NavLink>
@@ -98,6 +107,7 @@ const Navbar = () => {
                 smooth={true}
                 aria-label="contact"
                 data-tooltip="04.Contact"
+                onClick={onLinkClick}
               >
                 <FaPaperPlane className="react-icons" />
               </NavLink>
