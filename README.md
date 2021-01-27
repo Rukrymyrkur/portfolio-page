@@ -30,7 +30,6 @@ A one-page website created with React, experimenting with react-spring library a
 ├───src/
 │   ├───components/
 │   │   ├───About/
-│   │   ├───AltNavbar/
 │   │   ├───Contact/
 │   │   ├───Footer/
 │   │   ├───Home/
@@ -38,7 +37,6 @@ A one-page website created with React, experimenting with react-spring library a
 │   │   ├───ModeButton/
 │   │   ├───Navbar/
 │   │   ├───Skills/
-│   │   ├───Skills2/
 │   │   ├───TrailsAnimation/
 │   │   └───Work/
 │   │       ├───WorkTrailAnimation/

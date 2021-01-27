@@ -79,6 +79,10 @@ export const SkillItem = styled.div`
     opacity: 0.9;
     border: 1px solid gray;
     border-radius: 3px;
+    @media screen and (max-width: 768px) {
+      max-width: 5rem;
+      font-size: 0.9rem;
+    }
   }
 `;
 

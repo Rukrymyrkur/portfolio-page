@@ -35,7 +35,6 @@ const Navbar = () => {
 
   function onLinkClick(e) {
     e.preventDefault();
-    // further processing happens here
   }
   // if (width > breakpoint) {
   //   return (

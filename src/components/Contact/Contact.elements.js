@@ -52,6 +52,9 @@ export const ContactOther = styled.div`
   span {
     display: block;
   }
+  @media screen and (max-width: 700px) {
+    padding: 1rem;
+  }
 `;
 
 export const SocialContact = styled.div`
@@ -126,7 +129,8 @@ export const ContactModal = styled(Modal)`
   padding: 50px;
 
   @media screen and (max-width: 425px) {
-    max-height: 70vh;
+    margin: 0;
+    height: calc(100% - 50px);
   }
 `;
 
@@ -201,7 +205,8 @@ export const MessageArea = styled.textarea`
   /* border-radius: 4px; */
   box-sizing: border-box;
   height: 300px;
-  max-height: 500px;
+  /* max-height: 500px; */
+  height: 100px;
   width: 100%;
   resize: vertical;
   font-size: 1rem;
