@@ -48,6 +48,7 @@ export const ContactBox = styled.div`
 export const ContactOther = styled.div`
   flex: 1 1 0;
   height: 100%;
+  margin: 10px;
   span {
     display: block;
   }

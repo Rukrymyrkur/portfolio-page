@@ -99,7 +99,7 @@ const Work = () => {
                 </span>
                 <div>
                   <button>
-                    <a href="" target="_blank">
+                    <a href="/" target="_blank" rel="noreferrer">
                       Live
                     </a>
                   </button>
@@ -107,6 +107,7 @@ const Work = () => {
                     <a
                       href="https://github.com/Rukrymyrkur/portfolio-page"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Code
                     </a>
@@ -142,7 +143,11 @@ const Work = () => {
                 </span>
                 <div>
                   <button>
-                    <a href="https://neringasews.netlify.app/" target="_blank">
+                    <a
+                      href="https://neringasews.netlify.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Live
                     </a>
                   </button>
@@ -150,6 +155,7 @@ const Work = () => {
                     <a
                       href="https://github.com/Rukrymyrkur/sewing-portfolio-page"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Code
                     </a>
@@ -188,6 +194,7 @@ const Work = () => {
                     <a
                       href="https://blooming-depths-82764.herokuapp.com/"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Live
                     </a>
@@ -196,6 +203,7 @@ const Work = () => {
                     <a
                       href="https://github.com/Rukrymyrkur/office-quote-generator"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Code
                     </a>
@@ -235,6 +243,7 @@ const Work = () => {
                     <a
                       href="https://frozen-anchorage-84147.herokuapp.com/"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Live
                     </a>
@@ -243,6 +252,7 @@ const Work = () => {
                     <a
                       href="https://github.com/Rukrymyrkur/office-quote-api"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Code
                     </a>

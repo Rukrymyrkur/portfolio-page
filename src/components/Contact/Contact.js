@@ -122,12 +122,12 @@ const Contact = () => {
         <ContactModal
           isOpen={modalIsOpen}
           onRequestClose={() => setModalIsOpen(false)}
-          onAfterOpen={() => {
-            document.body.style.overflow = "hidden";
-          }}
-          onAfterClose={() => {
-            document.body.removeAttribute("style");
-          }}
+          // onAfterOpen={() => {
+          //   document.body.style.overflow = "hidden";
+          // }}
+          // onAfterClose={() => {
+          //   document.body.removeAttribute("style");
+          // }}
         >
           <Close aria-label="close" onClick={() => setModalIsOpen(false)}>
             ✘
