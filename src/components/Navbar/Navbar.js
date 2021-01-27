@@ -57,7 +57,6 @@ const Navbar = () => {
                 smooth={true}
                 arial-label="home"
                 data-tooltip="Home"
-                onClick={onLinkClick}
               >
                 <FaCampground className="react-icons" />
               </NavLink>
