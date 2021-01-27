@@ -21,11 +21,6 @@ import TrailsAnimation from "../TrailsAnimation/TrailsAnimation";
 
 import styled from "styled-components";
 
-function onLinkClick(e) {
-  e.preventDefault();
-  // further processing happens here
-}
-
 // Main Component
 const Navbar = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -38,6 +33,10 @@ const Navbar = () => {
     };
   }, []);
 
+  function onLinkClick(e) {
+    e.preventDefault();
+    // further processing happens here
+  }
   // if (width > breakpoint) {
   //   return (
   //     <div>
