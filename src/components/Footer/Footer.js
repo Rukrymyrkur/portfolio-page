@@ -4,7 +4,7 @@ import { FooterContainer } from "./Footer.elements";
 const Footer = () => {
   return (
     <>
-      <FooterContainer>© 2020 Neringa Surmilavičiūtė</FooterContainer>
+      <FooterContainer>© 2021 Neringa Surmilavičiūtė</FooterContainer>
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   ContactContainer,
   ContactModal,
@@ -8,39 +8,26 @@ import {
   TitleContainer,
   SocialContact,
   SocialLink,
+  StyledForm,
+  Button,
+  MessageArea,
+  Input,
+  Close,
 } from "./Contact.elements";
 import { useInView } from "react-intersection-observer";
 import { useSpring, a } from "react-spring";
 import { FaFacebookMessenger, FaGithub, FaLinkedin } from "react-icons/fa";
-import { Form, Button } from "react-bootstrap";
 
 const trans = (x, y) => `translate(${x}px,${y}px) translate(${x}px,${y}px)`;
 
-// Modal.setAppElement('#root')
 const Contact = () => {
-  //contact form
-  const [state, setState] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [success, setSuccess] = useState(false);
 
-  const sendEmail = (event) => {
-    event.preventDefault();
-
-    console.log("We will fill this up shortly.");
-    //code to trigger sending email
-  };
-
-  const onInputChange = (event) => {
-    const { name, value } = event.target;
-
-    setState({
-      ...state,
-      [name]: value,
-    });
-  };
+  useEffect(() => {
+    if (window.location.search.includes("success=true")) {
+      setSuccess(true);
+    }
+  }, []);
 
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -116,7 +103,10 @@ const Contact = () => {
               <FaGithub />
               Github
             </SocialLink>
-            <SocialLink href="/" target="_blank">
+            <SocialLink
+              href="https://www.linkedin.com/in/neringa-surmilavi%C4%8Di%C5%ABt%C4%97-56b522202/"
+              target="_blank"
+            >
               <FaLinkedin />
               LinkedIn
             </SocialLink>
@@ -139,55 +129,45 @@ const Contact = () => {
             document.body.removeAttribute("style");
           }}
         >
-          <form onSubmit={sendEmail}>
-            <Form.Group controlId="name">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="name"
-                value={state.name}
-                placeholder="Enter name"
-                onChange={onInputChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="text"
-                name="email"
-                value={state.email}
-                placeholder="Enter email"
-                onChange={onInputChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="subject">
-              <Form.Label>Subject</Form.Label>
-              <Form.Control
-                type="text"
-                name="subject"
-                value={state.subject}
-                placeholder="Enter subject"
-                onChange={onInputChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="subject">
-              <Form.Label>Message</Form.Label>
-              <Form.Control
-                as="textarea"
-                name="message"
-                value={state.message}
-                rows="3"
-                placeholder="Enter message"
-                onChange={onInputChange}
-              />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </form>
-          <button aria-label="close" onClick={() => setModalIsOpen(false)}>
-            Close
-          </button>
+          <Close aria-label="close" onClick={() => setModalIsOpen(false)}>
+            ✘
+          </Close>
+          <StyledForm
+            name="contact"
+            method="POST"
+            action="/contact/?success=true"
+            data-netlify="true"
+          >
+            <Input type="hidden" name="form-name" value="contact" />
+            <h2>Write me!</h2>
+            <p>
+              I'd appreciate any feedback, job opportunities, or just an
+              invitation to chat!
+            </p>
+            <label for="email">Your email:</label>
+            <Input
+              required
+              type="email"
+              name="email"
+              placeholder="email@domain.com"
+            />
+            <label for="name">Your name:</label>
+            <Input
+              required
+              type="name"
+              name="name"
+              placeholder="e.g. John Doe"
+            />
+            <label for="message">Message:</label>
+            <MessageArea
+              required
+              id="message"
+              name="message"
+              placeholder="Type here"
+            />
+            <Button type="submit">Send message</Button>
+            {success && <p>Thank You!</p>}
+          </StyledForm>
         </ContactModal>
       </ContactContainer>
     </>

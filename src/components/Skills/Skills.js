@@ -16,6 +16,7 @@ import TrailsAnimation from "../TrailsAnimation/TrailsAnimation";
 import {
   SiBootstrap,
   SiCss3,
+  SiFlask,
   SiGit,
   SiGithub,
   SiHtml5,
@@ -30,6 +31,7 @@ import {
   DiPhotoshop,
   DiSass,
   DiNodejsSmall,
+  DiSqllite,
 } from "react-icons/di";
 import { IconContext } from "react-icons";
 
@@ -110,7 +112,7 @@ const Skills = () => {
               </a.div>
               <DescriptionContainer>
                 <DescSectionContainer>
-                  <h3>Frontend:</h3>
+                  <h3>Fairly confident in:</h3>
                   <TrailsAnimation>
                     <SkillItem data-tooltip="Making webpages interactive, mainly using the client-side JavaScript">
                       <SiJavascript />
@@ -144,7 +146,7 @@ const Skills = () => {
                       <p>Bootstrap</p>
                     </SkillItem>
                   </TrailsAnimation>
-                  <h3>Backend:</h3>
+                  <h3>Gaining confidence in:</h3>
                   <TrailsAnimation>
                     <SkillItem data-tooltip="Programming fundamentals and basic algorithm scripting">
                       <svg viewBox="0 0 128 128">
@@ -152,9 +154,17 @@ const Skills = () => {
                       </svg>
                       <p>C</p>
                     </SkillItem>
-                    <SkillItem data-tooltip="Knowledge about basic compositions, have tried some web scraping">
+                    <SkillItem data-tooltip="Knowledge about basic algorithms, have tried some web scraping">
                       <SiPython />
                       <p>Python</p>
+                    </SkillItem>
+                    <SkillItem data-tooltip="Knowledge about routes, Jinja templating">
+                      <SiFlask />
+                      <p>Flask</p>
+                    </SkillItem>
+                    <SkillItem data-tooltip="Basics of creating tables and extracting data">
+                      <DiSqllite />
+                      <p>SQLite</p>
                     </SkillItem>
                     <SkillItem data-tooltip="Basics of Redux state and actions">
                       <SiRedux />

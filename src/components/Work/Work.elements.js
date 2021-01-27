@@ -79,6 +79,11 @@ export const Description = styled.div`
     }
     :active {
     }
+    a {
+      text-decoration: none;
+      color: ${({ theme }) => theme.text};
+      background-color: transparent;
+    }
   }
 `;
 
@@ -86,5 +91,3 @@ export const TitleContainer = styled.div`
   margin-top: 100px;
   padding: 10px;
 `;
-
-export const Button = styled.button``;

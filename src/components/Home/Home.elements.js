@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Container } from "../../globalStyles";
-import pic from "../../../src/images/pic.JPG";
 
 const baseColor = "#000000";
 const otherColor = "#3e3636";
@@ -89,7 +88,6 @@ export const ImgWrapper = styled.div`
   min-width: 50vw;
 
   position: absolute;
-  background-image: url(${pic});
   background-attachment: fixed;
   opacity: 0.3;
   background-repeat: no-repeat;

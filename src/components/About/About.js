@@ -94,12 +94,12 @@ const About = () => {
                     gradually fell into the world of web development, finished a
                     few courses on <strong>FreeCodeCamp</strong>,{" "}
                     <strong>Coursera</strong>, currently working on{" "}
-                    <strong>CS50</strong> based course in{" "}
+                    <strong>CS50</strong> full-stack based course in{" "}
                     <strong>Turing School</strong>.
                   </span>
                   <span>
-                    I am searching for a place where I can become a more
-                    important part of a dev team!
+                    I am looking for a place where I could become a part of a
+                    dev team!
                   </span>
                 </TrailsAnimation>
                 <a href="#work" className="link">

@@ -31,7 +31,7 @@ export const Hint = styled.span`
   font-size: 1.5rem;
   @media screen and (max-width: 768px) {
     writing-mode: horizontal-tb;
-    transform: translate(0px);
+    transform: translate(10px);
   }
 `;
 
