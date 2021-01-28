@@ -155,6 +155,9 @@ export const StyledForm = styled.form`
   label {
     margin-left: 2rem;
     font-size: 1.2rem;
+    @media screen and (max-width: 425px) {
+      font-size: 1rem;
+    }
   }
 `;
 export const Button = styled.button`
@@ -197,7 +200,9 @@ export const Input = styled.input`
     outline: none;
   }
   @media screen and (max-width: 725px) {
-    margin: 0.5rem 0;
+  }
+  @media screen and (max-width: 425px) {
+    margin: 0.2rem 0 0.4rem 0;
     font-size: 0.9rem;
   }
 `;
@@ -222,6 +227,15 @@ export const MessageArea = styled.textarea`
     border: 2px solid #a1083b;
     outline: none;
   }
+
+  @media screen and (max-width: 725px) {
+    height: 50px;
+  }
+  @media screen and (max-width: 425px) {
+    margin: 0.3rem 0;
+    padding: 6px;
+    font-size: 0.9rem;
+  }
 `;
 
 export const Close = styled.button`
@@ -240,6 +254,7 @@ export const Close = styled.button`
   }
 
   @media screen and (max-width: 725px) {
-    margin: 0;
+    margin-right: 0;
+    margin-top: 0;
   }
 `;

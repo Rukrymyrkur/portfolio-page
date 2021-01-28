@@ -17,8 +17,13 @@ export const DescriptionContainer = styled.div`
   /* align-items: center; */
   max-width: 1000px;
   margin: 50px 0;
+  justify-content: space-between;
   @media screen and (max-width: 900px) {
     flex-direction: column;
+    margin: 10px 0;
+  }
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
     margin: 10px 0;
   }
 `;
