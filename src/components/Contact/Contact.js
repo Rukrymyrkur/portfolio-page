@@ -26,6 +26,7 @@ const Contact = () => {
   useEffect(() => {
     if (window.location.search.includes("success=true")) {
       setSuccess(true);
+      setModalIsOpen(true);
     }
   }, []);
 
