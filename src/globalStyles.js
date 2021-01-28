@@ -158,7 +158,9 @@ export const Container = styled.div`
         font-size: 2.5rem;
     }
     @media screen and (max-width: 600px) {
-    text-underline-offset: 0rem;
+      text-decoration: none;
+    font-size: 3rem;
+
   }
 
 /* 
@@ -194,8 +196,7 @@ span{
     text-underline-offset: -10px;
     text-decoration-skip-ink: none;
     @media screen and (max-width: 600px) {
-    text-underline-offset: 0rem;
-    padding-bottom: 1rem;
+      text-decoration: none;
   }
     /* background-color: ${({ theme }) => theme.body}; */
 

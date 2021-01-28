@@ -130,7 +130,8 @@ export const ContactModal = styled(Modal)`
 
   @media screen and (max-width: 425px) {
     margin: 0;
-    height: calc(100% - 50px);
+    /* height: calc(100% - 50px); */
+    height: 100%;
     padding: 10px;
   }
 `;
@@ -236,5 +237,9 @@ export const Close = styled.button`
   &:hover {
     transition: 0.3s ease-in-out;
     color: #a1083b;
+  }
+
+  @media screen and (max-width: 725px) {
+    margin: 0;
   }
 `;

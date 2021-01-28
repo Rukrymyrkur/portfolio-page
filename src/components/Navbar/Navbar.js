@@ -35,6 +35,7 @@ const Navbar = () => {
 
   function onLinkClick(e) {
     e.preventDefault();
+    // in Element, onClick={onLinkClick}
   }
   // if (width > breakpoint) {
   //   return (
@@ -68,7 +69,6 @@ const Navbar = () => {
                 smooth={true}
                 aria-label="about"
                 data-tooltip="01.About"
-                onClick={onLinkClick}
               >
                 <FaFemale className="react-icons" />
               </NavLink>
@@ -80,7 +80,6 @@ const Navbar = () => {
                 smooth={true}
                 aria-label="skills"
                 data-tooltip="02.Skills"
-                onClick={onLinkClick}
               >
                 <FaLaptopCode className="react-icons" />
               </NavLink>
@@ -92,7 +91,6 @@ const Navbar = () => {
                 smooth={true}
                 aria-label="work"
                 data-tooltip="03.Work"
-                onClick={onLinkClick}
               >
                 <FaFolderOpen className="react-icons" />
               </NavLink>
@@ -104,7 +102,6 @@ const Navbar = () => {
                 smooth={true}
                 aria-label="contact"
                 data-tooltip="04.Contact"
-                onClick={onLinkClick}
               >
                 <FaPaperPlane className="react-icons" />
               </NavLink>
