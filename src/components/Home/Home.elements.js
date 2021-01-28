@@ -1,11 +1,6 @@
 import styled from "styled-components";
 import { Container } from "../../globalStyles";
 
-const baseColor = "#000000";
-const otherColor = "#3e3636";
-const anotherColor = "#d72323";
-const justAnotherColor = "#f5eded";
-
 export const HomeContainer = styled(Container)`
   min-height: 100vh;
 
@@ -46,7 +41,6 @@ export const DescriptionContainer = styled.div`
 `;
 
 export const Description = styled.h1`
-  mix-blend-mode: difference;
   font-weight: 700;
   line-height: 7rem;
   z-index: 999;

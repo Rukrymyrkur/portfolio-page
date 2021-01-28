@@ -1,25 +1,13 @@
-import React, { useRef, useState, useEffect } from "react";
-import {
-  NavLink,
-  NavMenu,
-  NavList,
-  SocialList,
-  NavItem,
-} from "./Navbar.elements";
-import { useTrail, a } from "react-spring";
+import React, { useState, useEffect } from "react";
+import { NavLink, NavMenu, NavList, NavItem } from "./Navbar.elements";
 import {
   FaCampground,
   FaFemale,
   FaFolderOpen,
-  FaGithub,
   FaLaptopCode,
-  FaLinkedin,
   FaPaperPlane,
 } from "react-icons/fa";
 import { IconContext } from "react-icons";
-import TrailsAnimation from "../TrailsAnimation/TrailsAnimation";
-
-import styled from "styled-components";
 
 // Main Component
 const Navbar = () => {
@@ -113,25 +101,6 @@ const Navbar = () => {
               </NavLink>
             </NavItem>
           </NavList>
-          {/* <SocialList>
-            <NavItem>
-              <NavLink as="a" href="#contact" smooth={true} aria-label="github">
-                <FaGithub className="react-icons" />
-                <span className="link-text">Github</span>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                as="a"
-                href="#contact"
-                smooth={true}
-                aria-label="linkedin"
-              >
-                <FaLinkedin className="react-icons" />
-                <span className="link-text">Linkedin</span>
-              </NavLink>
-            </NavItem>
-          </SocialList> */}
         </NavMenu>
       </IconContext.Provider>
     </>

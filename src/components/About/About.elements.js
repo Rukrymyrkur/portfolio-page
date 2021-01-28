@@ -25,7 +25,6 @@ export const DescriptionContainer = styled.div`
   align-items: center;
   max-width: 1000px;
   background-color: ${({ theme }) => theme.transparentBody};
-  /* border: 2px solid ${({ theme }) => theme.text}; */
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
@@ -71,11 +70,6 @@ export const Description = styled.p`
 export const TitleContainer = styled.div`
   margin-top: 10px;
   padding: 10px;
-  /* border-bottom: 8px solid white;
-    border-left: 8px solid white;
-    border-top: 8px solid black;
-    border-right: 8px solid black;
-    transform: skew(-5deg); */
 `;
 
 //trails-main

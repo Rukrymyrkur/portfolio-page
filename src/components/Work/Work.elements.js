@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { Container, BackgroundText } from "../../globalStyles";
 
-export const FullPageContainer = styled.div`
-  /* min-height: 100vh; */
-`;
+export const FullPageContainer = styled.div``;
 
 export const WorkContainer = styled(Container)`
   ${Container}
@@ -28,12 +26,14 @@ export const DescriptionContainer = styled.div`
   }
 `;
 export const DescriptionImages = styled.div`
+  display: block;
   @media screen and (min-width: 900px) {
     flex-direction: column;
     flex: 1 1 0;
   }
   @media screen and (max-width: 900px) {
     padding: 0 50px;
+    flex: none;
   }
   img {
     &.laptop {

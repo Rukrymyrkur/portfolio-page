@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import {
   AboutContainer,
   Description,
@@ -6,11 +6,10 @@ import {
   TitleContainer,
   Background,
   FullPageContainer,
-  TrailsMain,
   Circles,
 } from "./About.elements";
 import { useInView } from "react-intersection-observer";
-import { a, useSpring, useChain, useTrail } from "react-spring";
+import { a, useSpring, useChain } from "react-spring";
 import pic3 from "../../images/pic3.JPG";
 import { Parallax, useController } from "react-scroll-parallax";
 import TrailsAnimation from "../TrailsAnimation/TrailsAnimation";
@@ -19,7 +18,6 @@ const About = () => {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.3,
-    // rootMargin: "0px 0px 0px 50px",
   });
 
   //fade in container

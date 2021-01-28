@@ -1,6 +1,6 @@
-import React, { lazy, Suspense, useState } from "react";
+import React, { lazy, Suspense } from "react";
 import { GlobalStyle, lightTheme, darkTheme } from "./globalStyles";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { useDarkMode } from "./useDarkMode";
 import { ThemeProvider } from "styled-components";

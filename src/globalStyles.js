@@ -4,7 +4,6 @@ const primaryFont = "'Playfair Display', serif";
 const secondaryFont = "'Raleway', sans-serif";
 const tertiaryFont = "'Inter', sans-serif";
 const anotherFont = "'Roboto Mono', monospace";
-const beforeAfterColor = "#a8a8a8";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -51,7 +50,6 @@ body{
     /* background-color: #e8e8e8; */
 
 }
-
 `;
 
 export const SectionTitleContainer = styled.div``;
@@ -63,13 +61,8 @@ export const BackgroundText = styled.div`
 
   float: left;
   position: absolute;
-  /* margin-left: 200px;
-  margin-top: -10rem; */
-
   z-index: -5;
   opacity: 0.2;
-  /* writing-mode: vertical-rl;
-  text-orientation: mixed; */
 
   color: ${({ theme }) => theme.text};
   -webkit-text-fill-color: ${({ theme }) => theme.body};
@@ -113,29 +106,11 @@ export const Container = styled.div`
     @media screen and (max-width: 600px) {
     padding: 5px;
   }
-
-
     
    h1{
     font-family: ${tertiaryFont};
     text-align: center;
     width: 100%;
-
-
-
-    
-    /* &:before,:after{
-        font-size: 1rem;
-        font-family: 'Courier New', Courier, monospace;
-        display: inline-block;
-        color: ${beforeAfterColor};
-    }
-    &:before{
-        content: '<h1>';
-    }
-    &:after{
-        content: '</h1>'
-    } */
 }
 
    h2{
@@ -162,21 +137,6 @@ export const Container = styled.div`
     font-size: 3rem;
 
   }
-
-/* 
-    &:before,:after{
-        margin: 0 10px;
-        font-size: 1rem;
-        font-family: 'Courier New', Courier, monospace;
-        display: inline-block;
-        color: ${beforeAfterColor};
-    }
-    &:before{
-        content: '<h2>';
-    }
-    &:after{
-        content: '</h2>'
-    } */
 }
 
 span{
@@ -198,38 +158,12 @@ span{
     @media screen and (max-width: 600px) {
       text-decoration: none;
   }
-    /* background-color: ${({ theme }) => theme.body}; */
-
-    /* &:before,:after{
-        font-size: 1rem;
-        font-family: 'Courier New', Courier, monospace;
-        display: inline-block;
-        color: ${beforeAfterColor};
-    }
-    &:before{
-        content: '<h3>';
-    }
-    &:after{
-        content: '</h3>'
-    } */
 }
 
    p{
     font-family: ${anotherFont};
     font-weight: 100;
     width: 100%;
-
-    /* &:before,:after{
-        font-size: 1rem;
-        font-family: 'Courier New', Courier, monospace;
-        color: ${beforeAfterColor};
-    }
-    &:before{
-        content: '<p>';
-    }
-    &:after{
-        content: '</p>'
-    } */
 }
    a{
     font-family: ${anotherFont};

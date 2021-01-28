@@ -30,7 +30,7 @@ const Home = () => {
     opacity: scrollPosition > 10 ? 0 : 1,
   });
 
-  //fade in from left'Description'
+  //fade in from left 'Description'
   const { fadeLeft, transformLeft } = useSpring({
     to: { fadeLeft: 1, transformLeft: `scale(1) translate(0px, 0px)` },
     from: { fadeLeft: 0, transformLeft: `scale(0.98) translate(-50px, 0px)` },

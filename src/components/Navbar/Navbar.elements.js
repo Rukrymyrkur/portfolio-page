@@ -1,8 +1,6 @@
 import styled from "styled-components";
-// import {Link} from 'react-scroll';
 import { NavLink as Link } from "react-router-dom";
 
-//nav class = "navbar"
 export const NavMenu = styled.nav`
   position: fixed;
   background-color: transparent;
@@ -19,13 +17,6 @@ export const NavMenu = styled.nav`
   @media only screen and (min-width: 600px) {
     width: 3rem;
     height: 100vh;
-
-    /* :hover {
-      max-width: 16rem;
-    }
-    :hover .link-text {
-      display: inline-block;
-    } */
   }
 `;
 
@@ -76,7 +67,6 @@ export const NavItem = styled.li`
       max-width: 16rem;
       display: block;
       margin-left: 0.5rem;
-
       filter: grayscale(0%) opacity(0.9);
     }
   }
@@ -91,10 +81,6 @@ export const NavLink = styled(Link)`
   cursor: pointer;
 
   @media only screen and (min-width: 600px) {
-    /* :after {
-      transition: 500ms transform;
-      /* font-family: "'Roboto Mono', monospace" !important; */
-    /* } */
     ::after {
       opacity: 0;
       transition: 100ms;
