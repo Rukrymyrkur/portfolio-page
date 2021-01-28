@@ -80,9 +80,19 @@ export const Description = styled.div`
     color: ${({ theme }) => theme.text};
     background-color: transparent;
     border: 2px solid ${({ theme }) => theme.text};
+    transition-duration: 0.4s;
+
     :hover {
+      border: 2px solid #a1083b;
+      transition: 0.3s ease-in-out;
     }
     :active {
+      color: ${({ theme }) => theme.body};
+      background-color: #a1083b;
+    }
+    :focus {
+      border: 2px solid #a1083b;
+      outline: none;
     }
     a {
       text-decoration: none;

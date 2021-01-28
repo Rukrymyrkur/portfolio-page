@@ -99,7 +99,11 @@ const Work = () => {
                 </span>
                 <div>
                   <button>
-                    <a href="/" target="_blank" rel="noreferrer">
+                    <a
+                      href="https://neringa.netlify.app"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Live
                     </a>
                   </button>
