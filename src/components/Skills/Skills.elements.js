@@ -80,7 +80,7 @@ export const SkillItem = styled.div`
     border: 1px solid gray;
     border-radius: 3px;
     @media screen and (max-width: 768px) {
-      transform: translate(-25%, -105%);
+      transform: translate(-50%, -105%);
       max-width: 5rem;
       font-size: 0.9rem;
       margin-left: 0px;
