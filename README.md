@@ -8,7 +8,7 @@ A one-page website created with React, experimenting with react-spring library a
 [Main stack](#main-stack)
 [Structure](#structure)
 [Setup](#setup)
-[Link example](#link-example)
+[Live](#link-example)
 
 ## Notable features:
 
@@ -59,6 +59,6 @@ to run,
 npm start
 ```
 
-## Link example
+## Live
 
-[Live](www.willbeupdated.com)
+[Live](https://neringa.netlify.app/)
