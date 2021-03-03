@@ -8,18 +8,16 @@ import {
   FullPageContainer,
   DescriptionImages,
 } from "./Work.elements";
-import { useInView, InView } from "react-intersection-observer";
-import { a, useSpring, useChain } from "react-spring";
+import { useInView } from "react-intersection-observer";
+import { a, useSpring } from "react-spring";
 import laptop1 from "../../images/laptop1.png";
 import laptop2 from "../../images/laptop2.png";
-import laptop3 from "../../images/laptop3.png";
+import laptop3 from "../../images/laptop3.JPG";
 import laptop4 from "../../images/laptop4.png";
 import mobile1 from "../../images/mobile1.png";
-import mobile2 from "../../images/mobile2.png";
-import mobile3 from "../../images/mobile3.png";
+import mobile3 from "../../images/mobile3.JPG";
 import mobile4 from "../../images/mobile4.png";
 import { Parallax, useController } from "react-scroll-parallax";
-import TrailsAnimation from "../TrailsAnimation/TrailsAnimation";
 import WorkTrailAnimation from "./WorkTrailAnimation/WorkTrailAnimation";
 
 const Work = () => {
@@ -76,11 +74,59 @@ const Work = () => {
               </h2>
             </TitleContainer>
           </a.div>
-
           <DescriptionContainer>
             <Description>
               <WorkTrailAnimation>
-                <h3>03.01 Personal portfolio page</h3>
+                <h3>03.01 Sourdough scheduling app</h3>
+                <span>
+                  Created a full-stack app, with React on the front stack and
+                  Flask behind it. The app is created to simplify and take out
+                  the guesswork for a homebaker making sourdough.
+                </span>
+                <br />
+                <br />
+                <span>
+                  Stack:{" "}
+                  <strong>
+                    Javascript, React, Flask, styled-components, HTML,
+                    SQLAlchemy. Deployed with Docker and nginx.
+                  </strong>
+                </span>
+                <div>
+                  <button>
+                    <a
+                      href="https://sourdough.surm.lt"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Live
+                    </a>
+                  </button>
+                  <button>
+                    <a
+                      href="https://github.com/Rukrymyrkur/sourdough"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Code
+                    </a>
+                  </button>
+                </div>
+              </WorkTrailAnimation>
+            </Description>
+            <DescriptionImages>
+              <WorkTrailAnimation>
+                <img className="laptop" src={laptop3} alt="" />
+                <Parallax y={[-20, 0]}>
+                  <img className="mobile" src={mobile3} alt="" />
+                </Parallax>
+              </WorkTrailAnimation>
+            </DescriptionImages>
+          </DescriptionContainer>
+          <DescriptionContainer>
+            <Description>
+              <WorkTrailAnimation>
+                <h3>03.02 Personal portfolio page</h3>
                 <span>
                   Aimed to show to show my progress from the last one, notable
                   features are: a global <strong>theme selector</strong>,{" "}
@@ -132,7 +178,7 @@ const Work = () => {
           <DescriptionContainer>
             <Description>
               <WorkTrailAnimation>
-                <h3>03.02 Sewing projects' page</h3>
+                <h3>03.03 Sewing projects' page</h3>
                 <span>
                   Got to know about styled-components, creating routes and
                   anchors to different portions of various pages.
@@ -180,32 +226,35 @@ const Work = () => {
           <DescriptionContainer>
             <Description>
               <WorkTrailAnimation>
-                <h3>03.03 Quote generator</h3>
+                <h3>03.04 Flack</h3>
                 <span>
-                  First I've created an API, then applied it to a page that
-                  generates a random quote.
+                  When a user visits the app, they input their username or a
+                  generated one. Next time user visits the page, their username
+                  is taken from localStorage saved previously. All users are
+                  able to create new channels, previous messages sent in the
+                  channel (max 100 per room).
                 </span>
                 <br />
                 <br />
                 <span>
                   Stack:{" "}
                   <strong>
-                    Javascript, CSS, HTML, React, Bootstrap, express.js
+                    Javascript, socketio, jQuery, Python, SCSS, HTML, Bootstrap
                   </strong>
                 </span>
                 <div>
-                  <button>
-                    <a
-                      href="https://blooming-depths-82764.herokuapp.com/"
+                  <button disabled>
+                    {/* <a
+                      href="/"
                       target="_blank"
                       rel="noreferrer"
-                    >
-                      Live
-                    </a>
+                    > */}
+                    Not Live Yet
+                    {/* </a> */}
                   </button>
                   <button>
                     <a
-                      href="https://github.com/Rukrymyrkur/office-quote-generator"
+                      href="https://github.com/Rukrymyrkur/flack"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -219,56 +268,7 @@ const Work = () => {
               <WorkTrailAnimation>
                 <img className="laptop" src={laptop2} alt="" />
                 <Parallax y={[-20, 0]}>
-                  <img className="mobile" src={mobile2} alt="" />
-                </Parallax>
-              </WorkTrailAnimation>
-            </DescriptionImages>
-          </DescriptionContainer>
-
-          <DescriptionContainer>
-            <Description>
-              <WorkTrailAnimation>
-                <h3>03.04 Quote API</h3>
-                <span>
-                  Created an Office Quote API that can be used by anyone, using
-                  express.js.
-                </span>
-                <br />
-                <br />
-                <span>
-                  Stack:{" "}
-                  <strong>
-                    Javascript, CSS, HTML, React, Bootstrap, express.js,
-                    Handlebars
-                  </strong>
-                </span>
-                <div>
-                  <button>
-                    <a
-                      href="https://frozen-anchorage-84147.herokuapp.com/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Live
-                    </a>
-                  </button>
-                  <button>
-                    <a
-                      href="https://github.com/Rukrymyrkur/office-quote-api"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Code
-                    </a>
-                  </button>
-                </div>
-              </WorkTrailAnimation>
-            </Description>
-            <DescriptionImages>
-              <WorkTrailAnimation>
-                <img className="laptop" src={laptop3} alt="" />
-                <Parallax y={[-20, 0]}>
-                  <img className="mobile" src={mobile3} alt="" />
+                  {/* <img className="mobile" src={mobile2} alt="" /> */}
                 </Parallax>
               </WorkTrailAnimation>
             </DescriptionImages>

@@ -91,9 +91,8 @@ const About = () => {
                     I have a BA degree in <strong>architecture</strong>, but
                     gradually fell into the world of web development, finished a
                     few courses on <strong>FreeCodeCamp</strong>,{" "}
-                    <strong>Coursera</strong>, currently working on{" "}
-                    <strong>CS50</strong> full-stack based course in{" "}
-                    <strong>Turing School</strong>.
+                    <strong>Coursera</strong> and a <strong>CS50</strong>{" "}
+                    full-stack based course in <strong>Turing School</strong>.
                   </span>
                   <span>
                     I am looking for a place where I could become a part of a
