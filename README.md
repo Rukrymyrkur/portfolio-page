@@ -65,4 +65,3 @@ npm start
 ## Live
 
 [Live](https://neringa.netlify.app/)
-
