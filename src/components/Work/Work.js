@@ -10,11 +10,11 @@ import {
 } from "./Work.elements";
 import { useInView } from "react-intersection-observer";
 import { a, useSpring } from "react-spring";
-import laptop1 from "../../images/laptop1.png";
+import laptop1 from "../../images/laptop1.JPG";
 import laptop2 from "../../images/laptop2.png";
 import laptop3 from "../../images/laptop3.JPG";
 import laptop4 from "../../images/laptop4.png";
-import mobile1 from "../../images/mobile1.png";
+import mobile1 from "../../images/mobile1.JPG";
 import mobile3 from "../../images/mobile3.JPG";
 import mobile4 from "../../images/mobile4.png";
 import { Parallax, useController } from "react-scroll-parallax";
@@ -93,14 +93,14 @@ const Work = () => {
                   </strong>
                 </span>
                 <div>
-                  <button>
-                    <a
+                  <button disabled>
+                    {/* <a
                       href="https://sourdough.surm.lt"
                       target="_blank"
                       rel="noreferrer"
-                    >
-                      Live
-                    </a>
+                    > */}
+                    Not Live Yet
+                    {/* </a> */}
                   </button>
                   <button>
                     <a
@@ -178,23 +178,23 @@ const Work = () => {
           <DescriptionContainer>
             <Description>
               <WorkTrailAnimation>
-                <h3>03.03 Sewing projects' page</h3>
+                <h3>03.03 Quote Generator</h3>
                 <span>
-                  Got to know about styled-components, creating routes and
-                  anchors to different portions of various pages.
+                  A generator app as a follow-up to my API building project.
+                  It's a simple project made for practising API building.
                 </span>
                 <br />
                 <br />
                 <span>
                   Stack:{" "}
                   <strong>
-                    Javascript, CSS, HTML, React, styled-components
+                    express.js, express-handlebars, React, sass, HTML
                   </strong>
                 </span>
                 <div>
                   <button>
                     <a
-                      href="https://neringasews.netlify.app/"
+                      href="https://blooming-depths-82764.herokuapp.com/"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -203,7 +203,7 @@ const Work = () => {
                   </button>
                   <button>
                     <a
-                      href="https://github.com/Rukrymyrkur/sewing-portfolio-page"
+                      href="https://github.com/Rukrymyrkur/office-quote-generator"
                       target="_blank"
                       rel="noreferrer"
                     >

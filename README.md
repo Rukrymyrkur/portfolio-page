@@ -4,11 +4,13 @@ A one-page website created with React, experimenting with react-spring library a
 
 ## Table of contents
 
-[Notable Features](#notable-features)
-[Main stack](#main-stack)
-[Structure](#structure)
-[Setup](#setup)
-[Live](#live)
+- [Personal Portfolio Page](#personal-portfolio-page)
+  - [Table of contents](#table-of-contents)
+  - [Notable features:](#notable-features)
+  - [Main stack](#main-stack)
+  - [Structure](#structure)
+  - [Setup](#setup)
+  - [Live](#live)
 
 ## Notable features:
 
