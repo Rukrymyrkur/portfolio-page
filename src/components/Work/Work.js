@@ -93,14 +93,14 @@ const Work = () => {
                   </strong>
                 </span>
                 <div>
-                  <button disabled>
-                    {/* <a
-                      href="https://sourdough.surm.lt"
+                  <button>
+                    <a
+                      href="https://sourd0ugh.surm.lt"
                       target="_blank"
                       rel="noreferrer"
-                    > */}
-                    Not Live Yet
-                    {/* </a> */}
+                    >
+                      Live
+                    </a>
                   </button>
                   <button>
                     <a
